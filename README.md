@@ -7,6 +7,7 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+-
 
 ## usersテーブル
 |Column|Type|Options|
@@ -14,13 +15,13 @@
 |name|string|null: false|
 
 ### Association
-- has_many :messages
+- has_many :messages, through: :members
 - has_many :groups
 
 ## messagesテーブル
 |Column|Type|Options|
 |-------|-----|------|
-|message_text|text|null: false|
+|content|text|null: false|
 
 ### Association
 - belongs_to :user
@@ -29,12 +30,12 @@
 ## groupsテーブル
 |Column|Type|Options|
 |-------|-----|------|
-|group_name|text|null: false|
+|name|text|null: false|
 
 ### Association
 - belongs_to :user
-- has_many :messages
--has_many :members
+- has_many :messages, through: :members
+
 
 
 
