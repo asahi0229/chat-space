@@ -23,8 +23,8 @@
 ## messagesテーブル
 |Column|Type|Options|
 |-------|-----|------|
-|content|text|null: false|
-|image|string|null: false|
+|content|text||
+|image|string||
 
 ### Association
 - belongs_to :user
@@ -38,7 +38,7 @@
 
 ### Association
 - belongs_to :user
-- has_many :messages
+- has_many :messages, through: :members
 
 
 
