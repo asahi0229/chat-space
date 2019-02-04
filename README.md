@@ -7,7 +7,6 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
--
 
 ## usersテーブル
 |Column|Type|Options|
