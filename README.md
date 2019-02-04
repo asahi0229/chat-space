@@ -13,15 +13,18 @@
 |Column|Type|Options|
 |-----|-----|-----|
 |name|string|null: false|
+|image_id|integer|null: false, foreign_key:true|
 
 ### Association
-- has_many :messages, through: :members
-- has_many :groups
+- has_many :messages
+- has_many :groups, through: :members
+- has_many :members
 
 ## messagesテーブル
 |Column|Type|Options|
 |-------|-----|------|
 |content|text|null: false|
+|image|string|null: false|
 
 ### Association
 - belongs_to :user
@@ -31,10 +34,13 @@
 |Column|Type|Options|
 |-------|-----|------|
 |name|text|null: false|
+|image_id|integer|null: false, foreign_key:true|
 
 ### Association
 - belongs_to :user
-- has_many :messages, through: :members
+- has_many :messages
+
+
 
 
 
