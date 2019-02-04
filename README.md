@@ -22,6 +22,7 @@
 |Column|Type|Options|
 |-------|-----|------|
 |user_id|reference|null: false,  foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 |content|text|
 |image|string|
 
