@@ -1,0 +1,43 @@
+.wrapper
+
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+        %ul.left-header__members
+          Member：
+          %li.member
+          %li.member
+          %li.member
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+          .upper-message__date
+        .lower-meesage
+          .lower-message__content
+      .message
+        .upper-message
+          .upper-message__user-name
+          .upper-message__date
+        .lower-meesage
+          .lower-message__content
+      .message
+        .upper-message
+          .upper-message__user-name
+          .upper-message__date
+        .lower-meesage
+          .lower-message__content
+    .form
+      %form
+        %input.form__message{placeholder: 'type a message'}
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
