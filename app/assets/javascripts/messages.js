@@ -1,17 +1,16 @@
 $(function(){
   function buildHTML(message){
-    var haml = `.message
-                  .upper-message
-                    .upper-message__user-name
-                      = message.user.name
-                    .upper-message__date
-                      = message.created_at.strftime("%Y/%m/%d %H:%M")
-                  .lower-meesage
-                    - if message.content.present?
-                      %p.lower-message__content
-                        = message.content
-                    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?`
-    return haml;
+    var html = `<div class="message">
+                  <div class="upper-message">
+                    <div class="upper-message__user-name">
+                      ${message.user.name}
+                    <div class="upper-message__date">
+                      ${message.created_at.strftime("%Y/%m/%d %H:%M")}
+                  <div class="lower-meesage">
+                      <p class="lower-message__content">
+                        ${message.content}
+                    ${image_tag message.image.url, class: 'lower-message__image'}`
+    return html;
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -26,7 +25,7 @@ $(function(){
       contentType: false
     })
    .done(function(data){
-      var haml = buildHTML(data);
+      var html = buildHTML(data);
       $('.messages').append(html)
       $('.textbox').val('')
     })
@@ -34,3 +33,4 @@ $(function(){
       alert('error');
     })
   })
+})
