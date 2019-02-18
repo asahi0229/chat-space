@@ -42,8 +42,7 @@ $(function(){
     console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form__message').val('');
-      // $('.form__message').remove();
+      $('form')[0].reset();
     })
    .fail(function(){
       alert('error');
