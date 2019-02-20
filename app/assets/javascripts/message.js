@@ -43,7 +43,6 @@ $(document).on('turbolinks:load', function() {
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.form__message').val('');
-      // $('.form__message').remove();
     })
     .fail(function(){
       alert('error');
@@ -54,16 +53,16 @@ $(document).on('turbolinks:load', function() {
     setInterval(update, 5000);
   });
     function update(){
-      var lastmessage = $(".message").last().data('message-id');
+      var lastMessageId = $(".message").last().data('message-id');
       var pathname= location.pathname;
       $.ajax({
         url: pathname,
         type: 'GET',
-        data: { message: lastmessage},
+        data: { message: lastMessageId},
         dataType: 'json'
       })
       .done(function(data){
-        data.forEach(function(new_message){
+        data.forEach( function(new_message){
         var html = buildHTML(new_message);
         $('.messages').append(html);
         })
