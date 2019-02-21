@@ -55,6 +55,3 @@ $(document).on('turbolinks:load', function() {
     $(this).parent().remove();
   });
 });
-
-
-
