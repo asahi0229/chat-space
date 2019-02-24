@@ -26,5 +26,5 @@ Metrics/LineLength:
   Enabled: false
 
 #'frozen_string_literal: true'を無効
-Style/FrozenStringLiteralComment:
+Style/FrozenStringgitLiteralComment:
   Enabled: false

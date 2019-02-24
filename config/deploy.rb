@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock 'capistrano (3.11.0)'
+lock '3.11.0'
 
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
