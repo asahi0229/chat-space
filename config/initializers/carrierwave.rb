@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'アジアパシフィック(東京)'
   }
 
-  config.fog_directory  = 'asaho0229'
-  config.asset_host = 'https://s3-アジアパシフィック(東京).amazonaws.com/asaho0229'
+  config.fog_directory  = 'asahi0229-test'
+  config.asset_host = 'https://s3-アジアパシフィック(東京).amazonaws.com/asahi0229-test'
 end
